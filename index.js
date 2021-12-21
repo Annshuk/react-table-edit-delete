@@ -7,6 +7,7 @@ import './style.css';
 let data = [];
 let records = {};
 let getIndex;
+
 class App extends Component {
   constructor() {
     super();
