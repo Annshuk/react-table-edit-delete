@@ -63,7 +63,7 @@ class App extends Component {
 
   onAdd = (e) => {
     e.preventDefault();
-    const { fields, errors } = this.state;
+
     if (this.handleValidation(records)) {
       data = JSON.parse(localStorage.getItem('dataItem')) || [];
       data.push(records);
@@ -75,10 +75,10 @@ class App extends Component {
   toEdit = (e, ele, rowIndex) => {
     getIndex = rowIndex;
     e.preventDefault();
-    const { name, desc, date, time } = ele;
+
     records = ele;
     this.setState({
-      fields: { name, desc, date, time },
+      fields: ele,
       isEdit: true,
       update: false,
     });
@@ -214,8 +214,7 @@ class App extends Component {
 }
 
 const mapStateToProps = () => {};
-const mapDispatchToProps = (dispatch) => {};
 
-export default connect(mapStateToProps, mapStateToProps)(App);
+export default connect(null, mapStateToProps)(App);
 
 render(<App />, document.getElementById('root'));
