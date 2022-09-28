@@ -109,7 +109,8 @@ class App extends Component {
       fields: { name, desc, date, time },
       isEdit,
     } = this.state;
-    const dataItem = JSON.parse(localStorage.getItem('dataItem'));
+
+    const dataItem = JSON.parse(localStorage.getItem('dataItem')) || [];
 
     return (
       <div>
